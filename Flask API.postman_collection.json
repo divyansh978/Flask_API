@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "9e8170c4-b042-4fa8-a647-83dcce28dc97",
+		"name": "Flask API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20566567"
+	},
+	"item": [
+		{
+			"name": "Get JWT Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"divyanshg832@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sitemaps",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1Nzg4NjIzMSwianRpIjoiODQ5MzNiMTAtYzFhOS00M2Y2LThjNTQtOTZmOWFmYjRmNTdkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTc4ODYyMzEsImNzcmYiOiJhZmQ0YTJmYy0xNmM4LTRiNGUtOTgzNC0xYWRiYzgwYzYxMTgiLCJleHAiOjE3NTc4ODk4MzF9.dIhBlFg-8ezTd0gUSsN3jCepeSXT5MuSdio3KI4vYjk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/api/get_sitemaps?page=2&per_page=10",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"get_sitemaps"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Companies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1Nzg4NjIzMSwianRpIjoiODQ5MzNiMTAtYzFhOS00M2Y2LThjNTQtOTZmOWFmYjRmNTdkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTc4ODYyMzEsImNzcmYiOiJhZmQ0YTJmYy0xNmM4LTRiNGUtOTgzNC0xYWRiYzgwYzYxMTgiLCJleHAiOjE3NTc4ODk4MzF9.dIhBlFg-8ezTd0gUSsN3jCepeSXT5MuSdio3KI4vYjk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/api/get_companies?page=1&per_page=10",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"get_companies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
